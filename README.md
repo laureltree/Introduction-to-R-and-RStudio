@@ -1,2 +1,3 @@
-# Introduction_to_R_and_RStudio
-Intro to R project files as part of NZ ResBaz 2021
+# Introduction to R and RStudio
+
+These are intro to R project files as part of NZ ResBaz 2021
