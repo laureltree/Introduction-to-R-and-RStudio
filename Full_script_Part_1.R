@@ -144,6 +144,9 @@ library(palmerpenguins)
 
 ## view data set in console:
 penguins
+
+########################
+
 head(penguins)           #shows just the "head"/top part of the data
 
 ## view data in new tab in RStudio:
@@ -178,6 +181,10 @@ penguins_nafree
 #### Demonstration 3: The pipe operator %>% (more complex)
 
 # To calculate the mean bill length of each species in the penguin dataset:
+
+install.packages("dplyr")    ## to get the summarise() function
+library(dplyr)
+
 penguins_nafree %>% 
   group_by(species) %>% 
   summarise(average_bill_length = mean(bill_length_mm))
