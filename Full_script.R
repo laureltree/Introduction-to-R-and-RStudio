@@ -47,18 +47,22 @@ getwd()
 
 
 #### Demonstration 1: Data types
-class("Name")
+class("Anna")
 # [1] "character"
 class(2021)
 # [1] "numeric"
 
 
 #### Demonstration 1: Creating objects
-## the assignment operator is the symbols <- which form an arrow
-my_name <- "Laura"
+## the assignment operator is the symbols <- which form an arrow (Shortcut: Alt + - (Windows) or Option + - (Mac))
+my_name <- "Laura"      
 my_name
+# [1] "Laura"
+
+# So now the object my_name ‘contains’ the value "Laura". Another assignment to the same object will overwrite the content:
 my_name <- "Susanne"
 my_name
+# [1] "Susanne"
 
 
 #### Demonstration 1: R functions
@@ -101,8 +105,8 @@ gets()
 # > Error in gets() : could not find function "gets"
 
 # or
-penguins
-# > Error: object 'penguins' not found
+data
+# > Error: object 'data' not found
 
 ## very often this is due to a spelling mistake, 
 ## or because previous code didn't run correctly.
@@ -196,4 +200,34 @@ penguins_nafree %>%
 
 
 ########## TIME TO PRACTISE! ########## 
+
+
+
+
+#### Demonstration 4: Creating plots in R with ggplot
+
+# R default:
+plot(penguins_nafree$flipper_length_mm,	penguins_nafree$body_mass_g)
+
+## ggplot2:
+install.packages("ggplot2")
+library("ggplot2")
+
+# scatter:
+ggplot(data = penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species)) +
+  geom_point()
+
+# facets:
+ggplot(penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species)) +
+  geom_point() +
+  facet_grid(island~sex )
+
+
+# themes and labels:
+ggplot(penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species)) +
+  geom_point() +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)", color= "Species") +
+  theme_classic()
+
+
 
