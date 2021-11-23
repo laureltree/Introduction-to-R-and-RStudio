@@ -222,12 +222,17 @@ ggplot(penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species)) 
   geom_point() +
   facet_grid(island~sex )
 
-
 # themes and labels:
 ggplot(penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species)) +
   geom_point() +
   labs(x = "Flipper length (mm)", y = "Body mass (g)", color= "Species") +
   theme_classic()
 
+# Colors and color palettes
+ggplot(penguins_nafree, aes(x=flipper_length_mm, y=body_mass_g, color=species))+
+  geom_point() +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)", color= "Species") +
+  scale_color_manual(values=c("blue", "red" , "green4" )) +
+  theme_classic() 
 
 
